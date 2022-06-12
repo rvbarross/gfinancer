@@ -1,0 +1,10 @@
+<section class="phx-hero">
+  <div class="mt-5 mb-5">
+    <h1><%= gettext "Bem vindo ao %{name}!", name: "Gfinancer" %></h1>
+    <p>Organize suas receitas e despesas aqui!</p>
+  </div>
+  
+  <a href={ Routes.despesas_path(@conn, :index) } class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Quero ver minhas despesas</a>
+  <a href={ Routes.receitas_path(@conn, :index) } class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Quero ver minhas receitas</a>
+</section>
+

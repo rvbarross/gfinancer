@@ -1,0 +1,22 @@
+<.form let={f} for={@changeset} action={@action}>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, alguma coisa deu errado! Por favor check os erros abaixo.</p>
+    </div>
+  <% end %>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">
+      Descrição: <%= text_input f, :descricao %>
+    </label>
+    <%= error_tag f, :descricao %>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">
+      Valor: <%= text_input f, :valor %>
+    </label>
+    <%= error_tag f, :valor %>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </div>
+</.form>

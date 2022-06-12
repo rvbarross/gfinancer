@@ -1,0 +1,34 @@
+<h1 class="mt-5 mb-5">Lista de Receitas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+    
+      <th scope="col">Descrição</th>
+      <th scope="col">Valor</th>
+
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for receitas <- @receitas do %>
+    <tr>
+      
+      <td><%= receitas.descricao %></td>
+      <td><%= receitas.valor %></td>
+
+      <td>
+        <a href={ Routes.receitas_path(@conn, :show, receitas) } class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">Mostrar Informações</a>
+      </td>
+      <td>
+        <a href={ Routes.receitas_path(@conn, :edit, receitas) } class="btn btn-warning" tabindex="-1" role="button" aria-disabled="true">Editar Receita</a>
+      </td>
+      <td>
+        <span class="btn btn-danger"><%= link "Excluir Receita", to: Routes.receitas_path(@conn, :delete, receitas), method: :delete, data: [confirm: "Você tem certeza?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<a href={ Routes.receitas_path(@conn, :new) } class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Cadastrar Despesa</a>

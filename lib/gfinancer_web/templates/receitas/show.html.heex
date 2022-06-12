@@ -1,0 +1,17 @@
+<h1 class="mt-5 mb-5">Informações da Receita</h1>
+
+<div class="d-grid gap-3">
+  <div class="p-2 bg-light border">
+    <strong>Descrição:</strong>
+    <input class="form-control" type="text" value={ @receitas.descricao } aria-label="readonly input example" readonly>
+
+  </div>
+  <div class="p-2 bg-light border">
+    <strong>Valor:</strong>
+    <input class="form-control" type="text" value={ @receitas.valor } aria-label="readonly input example" readonly>
+
+  </div>
+</div>
+
+<a href={ Routes.receitas_path(@conn, :edit, @receitas) } class="btn btn-warning" tabindex="-1" role="button" aria-disabled="true">Editar Despesa</a>
+<a href={ Routes.receitas_path(@conn, :index) } class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">Voltar</a>
